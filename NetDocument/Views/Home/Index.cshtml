@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="top">
+    @if (!string.IsNullOrEmpty(ViewData["token"].ToString()))
+    {
+        <input type="hidden" value="@ViewData["token"].ToString()" id="token" />
+        <a id="cabinet" class="btn btn-primary" href="#">
+            Upload
+        </a>
+        <div class="alert top" role="alert" id="message"></div>
+    }
+    else
+    {
+        <a class="btn btn-info"
+           href="https://vault.netvoyage.com/neWeb2/OAuth.aspx?client_id=AP-68L69QNN&scope=full&response_type=token&redirect_uri=http://localhost:50192/">
+            Login
+        </a>
+    }
+</div>
+
